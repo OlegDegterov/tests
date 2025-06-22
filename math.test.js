@@ -2,38 +2,19 @@ import {devide, multiply, sum} from  './math';
 
 describe("math", () => {
 
-    describe("devide", () => {
-             it("should devide positive numbers", () => {
-                const expectedResult = 6
+    describe.only("devide", () => {
+             it.each([
+                {inputA: 6, inputB: 3, expected: 2},
+                {inputA: 12, inputB: 3, expected: 4},
+                {inputA: 100, inputB: 10, expected: 10},
+                {inputA: 10, inputB: 0, expected: Infinity},
+                {inputA: 6, inputB: 3, expected: 2},
+             ])("should $inputA devided by $inputB equals $expected", ({inputA, inputB, expected}) => {
         
-                const actualdResult  = devide(18,3)
+                const actualdResult  = devide(inputA,inputB)
             
-                expect(actualdResult).toBe(expectedResult)
+                expect(actualdResult).toBe(expected)
             })
-        
-             it("should devide negative numbers", () => {
-                const expectedResult = 6
-
-                const actualdResult  = devide(-18,-3)
-            
-                expect(actualdResult).toBe(6)
-            })
-        
-             it("should devide positive and negative numbers", () => {
-                const expectedResult = -6
-
-                const actualdResult  = devide(18,-3)
-            
-                expect(actualdResult).toBe(expectedResult)
-            })
-             it("should devide return Infinity dividing by 0", () => {
-                const expectedResult = Infinity
-        
-                const actualdResult  = devide(18,0)
-            
-                expect(actualdResult).toBe(expectedResult)
-            })
-
     })
 
     describe("multiply", () => {
