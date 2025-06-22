@@ -1,4 +1,4 @@
-import {toUpper, toLower, len} from  './strings';
+import {toUpper, toLower, len} from  '../strings';
 
 describe("strings", () => {
 
@@ -17,7 +17,7 @@ describe("strings", () => {
     })
 
     describe("toLower", () => {
-            it.each([
+            fit.each([
                 {input: "LOL", expected: "lol"},
                 {input: "---", expected: "---"},
                 {input: "lol", expected: "lol"},

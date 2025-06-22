@@ -1,4 +1,4 @@
-import {devide, multiply, sum} from  './math';
+import {devide, multiply, sum} from  '../math';
 
 describe("math", () => {
 
